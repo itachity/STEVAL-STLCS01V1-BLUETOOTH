@@ -1,2 +1,2 @@
 # STEVAL-STLCS01V1-BLUETOOTH
-Bluetooth implementatiobn for STEVAL-STLCS01V1
+UART and bluetooth examples
