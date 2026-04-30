@@ -1,3 +1,12 @@
+/* Disabled: bluenrg_utils_small.c is excluded from this build because the
+ * BLE_SampleApp uses the full bluenrg_utils.c which defines the same
+ * getBlueNRGVersion symbol. Linking both causes a duplicate-symbol error.
+ *
+ * Wrapping the original contents in #if 0 keeps the file in the source tree
+ * (so the existing IDE source folders still resolve) but contributes no
+ * symbols at link time.
+ */
+#if 0
 
 #include "bluenrg_types.h"
 #include "bluenrg_def.h"
@@ -9,18 +18,10 @@
 
 uint8_t getBlueNRGVersion(uint8_t *hwVersion, uint16_t *fwVersion)
 {
-  uint8_t status;
-  uint8_t hci_version, lmp_pal_version;
-  uint16_t hci_revision, manufacturer_name, lmp_pal_subversion;
-
-  status = hci_le_read_local_version(&hci_version, &hci_revision, &lmp_pal_version, 
-				     &manufacturer_name, &lmp_pal_subversion);
-
-  if (status == BLE_STATUS_SUCCESS) {
-    *hwVersion = hci_revision >> 8;
-    *fwVersion = (hci_revision & 0xFF) << 8;              // Major Version Number
-    *fwVersion |= ((lmp_pal_subversion >> 4) & 0xF) << 4; // Minor Version Number
-    *fwVersion |= lmp_pal_subversion & 0xF;               // Patch Version Number
-  }
-  return status;
+  /* original implementation lives in bluenrg_utils.c */
+  (void)hwVersion;
+  (void)fwVersion;
+  return 0;
 }
+
+#endif /* 0 */
