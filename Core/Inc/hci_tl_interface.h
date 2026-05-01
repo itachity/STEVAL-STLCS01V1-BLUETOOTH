@@ -33,9 +33,10 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+#include <stdint.h>
 #include "SensorTile_conf.h"
 
-extern volatile uint32_t HCI_ProcessEvent;   
+extern volatile uint32_t HCI_ProcessEvent;
 /* Exported Defines ----------------------------------------------------------*/
 
 #define HCI_TL_SPI_EXTI_PORT  GPIOC

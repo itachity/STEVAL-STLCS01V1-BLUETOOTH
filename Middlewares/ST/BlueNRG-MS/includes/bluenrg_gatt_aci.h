@@ -16,6 +16,8 @@
 #ifndef __BLUENRG_GATT_ACI_H__
 #define __BLUENRG_GATT_ACI_H__
 
+#include <stdint.h>
+#include "bluenrg_types.h"
 #include "bluenrg_gatt_server.h"
 
 /** 

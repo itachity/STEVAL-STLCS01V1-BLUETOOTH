@@ -45,9 +45,14 @@
 #ifndef _UUID_BLE_SERVICE_H_
 #define _UUID_BLE_SERVICE_H_
 
+/* The macros below cast bytes to uint8_t when they expand. Including
+ * <stdint.h> here keeps the header self-contained so callers don't have to
+ * arrange the include order themselves. */
+#include <stdint.h>
+
 #ifdef __cplusplus
  extern "C" {
-#endif 
+#endif
 
 #define COPY_UUID_128(uuid_struct, uuid_15, uuid_14, uuid_13, uuid_12, uuid_11, uuid_10, uuid_9, uuid_8, uuid_7, uuid_6, uuid_5, uuid_4, uuid_3, uuid_2, uuid_1, uuid_0) \
 {\
